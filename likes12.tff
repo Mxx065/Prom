@@ -1,0 +1,152 @@
+%%%%%
+% Element types
+%%%%%
+
+tff( type_of_a, type, a: humans).
+
+tff( type_of_g, type, g: humans).
+
+tff( type_of_d, type, d: humans).
+
+tff( type_of_c, type, c: humans).
+
+tff( type_of_f, type, f: humans).
+
+tff( type_of_b, type, b: humans).
+
+tff( type_of_e, type, e: humans).
+
+
+%%%%%
+% Relations
+%%%%%
+
+tff( rel_likes____b__b, axiom, 
+	likes(b, b )
+).
+
+tff( rel_likes____b__d, axiom, 
+	likes(b, d )
+).
+
+tff( rel_likes____f__e, axiom, 
+	likes(f, e )
+).
+
+tff( rel_male____c, axiom, 
+	male(c )
+).
+
+tff( rel_male____a, axiom, 
+	male(a )
+).
+
+tff( rel_male____b, axiom, 
+	male(b )
+).
+
+tff( rel_person____c, axiom, 
+	person(c )
+).
+
+tff( rel_likes____a__a, axiom, 
+	likes(a, a )
+).
+
+tff( rel_likes____e__e, axiom, 
+	likes(e, e )
+).
+
+tff( rel_person____d, axiom, 
+	person(d )
+).
+
+tff( rel_person____e, axiom, 
+	person(e )
+).
+
+tff( rel_person____f, axiom, 
+	person(f )
+).
+
+tff( rel_likes____a__c, axiom, 
+	likes(a, c )
+).
+
+tff( rel_likes____e__g, axiom, 
+	likes(e, g )
+).
+
+tff( rel_person____g, axiom, 
+	person(g )
+).
+
+tff( rel_likes____d__d, axiom, 
+	likes(d, d )
+).
+
+tff( rel_female____d, axiom, 
+	female(d )
+).
+
+tff( rel_likes____d__b, axiom, 
+	likes(d, b )
+).
+
+tff( rel_female____e, axiom, 
+	female(e )
+).
+
+tff( rel_female____f, axiom, 
+	female(f )
+).
+
+tff( rel_person____b, axiom, 
+	person(b )
+).
+
+tff( rel_person____a, axiom, 
+	person(a )
+).
+
+tff( rel_likes____c__c, axiom, 
+	likes(c, c )
+).
+
+tff( rel_likes____g__g, axiom, 
+	likes(g, g )
+).
+
+tff( rel_likes____c__a, axiom, 
+	likes(c, a )
+).
+
+tff( rel_likes____g__e, axiom, 
+	likes(g, e )
+).
+
+tff( rel_likes____c__g, axiom, 
+	likes(c, g )
+).
+
+tff( rel_likes____g__b, axiom, 
+	likes(g, b )
+).
+
+
+%%%%%
+% Conjectures
+%%%%%
+
+tff( everybody_is_a_person, conjecture, 
+	( ! [ X: humans ] : ( person(X ) ) )
+).
+
+tff( every_female_is_a_person, conjecture, 
+	( ! [ X: humans ] : ( ( female(X ) => person(X ) ) ) )
+).
+
+tff( every_person_is_a_human, conjecture, 
+	( ! [ X ] : ( ( person(X ) => ( X IS IN humans ) ) ) )
+).
+

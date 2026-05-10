@@ -1,0 +1,28 @@
+transaction removeSupplier ( S: suppliers, P: products ) {
+	remove (S, P) from supplies;
+}
+
+
+transaction startSupply ( S: suppliers, P: products ) {
+	register S;
+	register P;
+	insert (S, P) into supplies;
+}
+
+
+transaction chosenSupplier ( S: suppliers, O: orders ) {
+}
+
+
+transaction addBid ( O: orders, S: suppliers ) {
+	insert (O, S) into bid;
+}
+
+
+transaction addOrder ( O: orders, P: products ) {
+	register O;
+	register P;
+	insert (O, P) into order;
+}
+
+

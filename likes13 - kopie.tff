@@ -1,0 +1,70 @@
+%%%%%
+% Element types
+%%%%%
+
+tff( type_of_s1, type, s1: suppliers).
+
+tff( type_of_s2, type, s2: suppliers).
+
+tff( type_of_s3, type, s3: suppliers).
+
+tff( type_of_o3, type, o3: orders).
+
+tff( type_of_o1, type, o1: orders).
+
+tff( type_of_o2, type, o2: orders).
+
+tff( type_of_p1, type, p1: products).
+
+tff( type_of_p4, type, p4: products).
+
+tff( type_of_p3, type, p3: products).
+
+tff( type_of_p2, type, p2: products).
+
+
+%%%%%
+% Relations
+%%%%%
+
+tff( rel_supplies____s1__p1, axiom, 
+	supplies(s1, p1 )
+).
+
+tff( rel_supplies____s3__p3, axiom, 
+	supplies(s3, p3 )
+).
+
+tff( rel_contains____o1__s1__p1, axiom, 
+	contains(o1, s1, p1 )
+).
+
+tff( rel_supplies____s3__p4, axiom, 
+	supplies(s3, p4 )
+).
+
+tff( rel_supplies____s1__p4, axiom, 
+	supplies(s1, p4 )
+).
+
+tff( rel_supplies____s2__p3, axiom, 
+	supplies(s2, p3 )
+).
+
+tff( rel_supplies____s2__p2, axiom, 
+	supplies(s2, p2 )
+).
+
+tff( rel_supplies____s3__p1, axiom, 
+	supplies(s3, p1 )
+).
+
+
+%%%%%
+% Conjectures
+%%%%%
+
+tff( supplier_mag_bieden_als_hij_product_aanlevert, conjecture, 
+	( ! [ O: orders ] : ( ( ! [ P: products ] : ( ( ! [ S: suppliers ] : ( ( contains(O, S, P ) => supplies(S, P ) ) ) ) ) ) ) )
+).
+
