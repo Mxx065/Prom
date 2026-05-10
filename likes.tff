@@ -1,0 +1,59 @@
+%%%%%
+% Element types
+%%%%%
+
+tff( type_of_a, type, a: humans).
+
+tff( type_of_b, type, b: humans).
+
+tff( type_of_c, type, c: humans).
+
+tff( type_of_d, type, d: humans).
+
+%%%%%
+% Relations
+%%%%%
+
+tff( rel_person____a, axiom,
+	person( a )
+).
+
+tff( rel_person____b, axiom,
+	person( b )
+).
+
+tff( rel_person____c, axiom,
+	person( c )
+).
+
+tff( rel_person____d, axiom,
+	person( d )
+).
+
+tff( rel_male____c, axiom,
+	male( c )
+).
+
+tff( rel_female____d, axiom,
+	female( d )
+).
+
+tff( rel_likes____a___c, axiom,
+	likes( a, c )
+).
+
+%%%%%
+% Conjectures
+%%%%%
+
+tff( everybody_is_a_person, conjecture,
+	( ! [ X: humans ] : ( person(X) ) )
+).
+
+tff ( every_person_is_a_human, conjecture,
+  ( ! [ X ] : ( person(X) IMPLIES ( X IS IN humans ) ) )
+).
+
+tff( every_female_is_a_person, conjecture,
+	( ! [ X: humans ] : ( female(X) => person(X) ) )
+).
